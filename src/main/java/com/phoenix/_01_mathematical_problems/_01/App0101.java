@@ -4,7 +4,7 @@ public class App0101 {
 
   public static void main(String[] args) {
 
-    final int number = 123;
+    final int number = 6534627;
 
     extractDigits(number);
 
@@ -14,11 +14,22 @@ public class App0101 {
 
   public static void extractDigits(final int startValue) {
 
+    if(startValue / 10 > 0) {
+      extractDigits(startValue / 10);
+    }
+    System.out.printf("%s ", startValue % 10);
+
   }
 
   public static int countDigits(final int number){
 
+    if (number > 0){
+    int length = String.valueOf(number).length();
+
+    return length;
+    }else {
+
     return 0;
-  }
+  }}
 
 }
