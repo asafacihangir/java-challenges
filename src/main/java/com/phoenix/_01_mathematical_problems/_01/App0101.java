@@ -24,9 +24,8 @@ public class App0101 {
   public static int countDigits(final int number){
 
     if (number > 0){
-    int length = String.valueOf(number).length();
 
-    return length;
+      return String.valueOf(number).length();
     }else {
 
     return 0;
