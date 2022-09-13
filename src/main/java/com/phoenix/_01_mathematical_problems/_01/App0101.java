@@ -4,34 +4,25 @@ public class App0101 {
 
   public static void main(String[] args) {
 
-    final int number = -6781;
+    double x1 = 3;
+    double y1 = 4;
+    double x2 = 7;
+    double y2 = 1;
 
+    double distance = calculateDistanceBetweenPointsWithHypot(x1, y1, x2, y2);
 
-    extractDigits(number);
-
-    final int numberOfDigits = countDigits(number);
-    System.out.printf("%s has %s digits%n", number, numberOfDigits);
-
+    System.out.println(distance);
   }
 
-  public static void extractDigits(final int val) {
-    int startValue = Math.abs(val);
-    if(startValue / 10 > 0) {
-      extractDigits(startValue / 10);
-    }
-    System.out.printf("%s ", startValue % 10);
+  public static double calculateDistanceBetweenPointsWithHypot(
+      double x1,
+      double y1,
+      double x2,
+      double y2) {
+
+    double ac = Math.abs(y2 - y1);
+    double cb = Math.abs(x2 - x1);
+
+    return Math.hypot(ac, cb);
   }
-
-  public static int countDigits(final int val){
-    int number = Math.abs(val);
-    int count = 0;
-    int divider = number;
-    while (divider > 0 ){
-      divider =  divider / 10;
-      count++;
-    }
-    return count;
-  }
-
-
 }
